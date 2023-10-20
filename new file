@@ -10,3 +10,19 @@
 * * *
 * * 
 *
+Ans:
+# Loop for the numbers pattern
+for ((i = 1; i <= 4; i++)); do
+    for ((j = 1; j <= i; j++)); do
+        echo -n "$j "
+    done
+    echo
+done
+
+# Loop for the asterisks pattern
+for ((i = 4; i >= 1; i--)); do
+    for ((j = 1; j <= i; j++)); do
+        echo -n "* "
+    done
+    echo
+done
