@@ -27,3 +27,46 @@ while true; do
             ;;
     esac
 done
+
+
+
+
+Ans 2:
+while true; do
+    clear
+    echo "Menu:"
+    echo "1) Create 'anand' and 'tmp' directories and 4 files in 'anand'"
+    echo "2) Exit"
+    read -p "Enter your choice: " choice
+
+    case $choice in
+        1)
+            # Create 'anand' directory if it doesn't exist
+            if [ ! -d "anand" ]; then
+                mkdir "anand"
+            fi
+
+            # Create 'tmp' directory if it doesn't exist
+            if [ ! -d "tmp" ]; then
+                mkdir "tmp"
+            fi
+
+            # Create 4 files in 'anand' directory
+            for i in {1..4}; do
+                touch "anand/project-$i"
+            done
+
+            echo "Directories 'anand' and 'tmp' created with 4 files in 'anand'."
+            read -p "Press Enter to continue..."
+            ;;
+        2)
+            echo "Exiting the program."
+            exit 0
+            ;;
+        *)
+            echo "Invalid choice. Please enter a valid option."
+            read -p "Press Enter to continue..."
+            ;;
+    esac
+done
+
