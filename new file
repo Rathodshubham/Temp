@@ -1,4 +1,11 @@
 1)write a shell script to check numbers from 200 to 300 is divisible by 7 and 13
+Ans:
+
+for number in {200..300}; do
+    if [ $((number % 7)) -eq 0 ] && [ $((number % 13)) -eq 0 ]; then
+        echo "$number is divisible by both 7 and 13"
+    fi
+done
 
 
 2)print pattern in shell script 
