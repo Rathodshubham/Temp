@@ -105,3 +105,42 @@ while true; do
             ;;
     esac
 done
+
+
+Ans 4;
+while true; do
+    # Display the menu
+    echo "Menu:"
+    echo "1. Copy all files from the current directory to a temporary directory"
+    echo "2. Exit"
+
+    # Read user input
+    read -p "Enter your choice: " choice
+
+    case $choice in
+        1)
+            # Create a temporary directory if it doesn't exist
+            tmp_dir="tmp_directory"
+            mkdir -p $tmp_dir
+
+            # Copy all files to the temporary directory
+            cp * $tmp_dir
+
+            # Check if any files were copied
+            if [ "$(ls -A $tmp_dir)" ]; then
+                echo "Files copied to $tmp_dir successfully."
+            else
+                echo "No files to copy."
+            fi
+            ;;
+        2)
+            # Exit the script
+            echo "Exiting the program. Goodbye!"
+            exit 0
+            ;;
+        *)
+            # Invalid choice
+            echo "Invalid choice. Please select a valid option."
+            ;;
+    esac
+done
