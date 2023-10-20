@@ -1,1 +1,3 @@
 Sejal ans
+sudo filename.sh
+
