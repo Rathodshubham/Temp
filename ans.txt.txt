@@ -144,3 +144,51 @@ while true; do
             ;;
     esac
 done
+
+
+Ans5:
+#!/bin/bash
+
+while true; do
+    clear
+    echo "Menu:"
+    echo "1) Rename files in 'tmp' directory"
+    echo "2) Exit"
+    read -p "Enter your choice: " choice
+
+    case $choice in
+        1)
+            # Check if 'tmp' directory exists
+            if [ -d "tmp" ]; then
+                cd "tmp" || exit 1
+
+                # Rename files in 'tmp' directory
+                for i in {11..44}; do
+                    for file in *; do
+                        if [ -f "$file" ]; then
+                            ext="${file##*.}"
+                            mv "$file" "project-$i.$ext"
+                            break
+                        fi
+                    done
+                done
+
+                echo "Files in 'tmp' directory have been renamed."
+                cd ..  # Go back to the original directory
+            else
+                echo "'tmp' directory not found in the current directory."
+            fi
+
+            read -p "Press Enter to continue..."
+            ;;
+        2)
+            echo "Exiting the program."
+            exit 0
+            ;;
+        *)
+            echo "Invalid choice. Please enter a valid option."
+            read -p "Press Enter to continue..."
+            ;;
+    esac
+done
+
