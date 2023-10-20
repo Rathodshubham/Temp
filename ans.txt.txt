@@ -70,3 +70,38 @@ while true; do
     esac
 done
 
+
+
+Ans3 :
+#!/bin/bash
+
+while true; do
+    # Display the menu
+    echo "Menu:"
+    echo "1. Print the total number of files and directories in the current directory"
+    echo "2. Exit"
+
+    # Read user input
+    read -p "Enter your choice: " choice
+
+    case $choice in
+        1)
+            # Count the number of files and directories
+            files=$(find . -maxdepth 1 -type f | wc -l)
+            directories=$(find . -maxdepth 1 -type d | wc -l)
+
+            # Print the results
+            echo "Total number of files: $files"
+            echo "Total number of directories: $directories"
+            ;;
+        2)
+            # Exit the script
+            echo "Exiting the program. Goodbye!"
+            exit 0
+            ;;
+        *)
+            # Invalid choice
+            echo "Invalid choice. Please select a valid option."
+            ;;
+    esac
+done
