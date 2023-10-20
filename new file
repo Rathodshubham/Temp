@@ -1,0 +1,12 @@
+1)write a shell script to check numbers from 200 to 300 is divisible by 7 and 13
+
+
+2)print pattern in shell script 
+1
+1 2
+1 2 3
+1 2 3 4
+* * * *
+* * *
+* * 
+*
