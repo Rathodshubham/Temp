@@ -1,3 +1,29 @@
 Sejal ans
 sudo filename.sh
+ans 1 test kr lia online compiler pe shoaib phn nhi utha rha
+Answer 1:
+while true; do
+    clear
+    echo "Menu:"
+    echo "1) Print current user and date-time"
+    echo "2) Exit"
+    read -p "Enter your choice: " choice
 
+    case $choice in
+        1)
+            current_user=$(whoami)
+            current_datetime=$(date +"%Y-%m-%d %H:%M:%S")
+            echo "Current user: $current_user"
+            echo "Current date and time: $current_datetime"
+            read -p "Press Enter to continue..."
+            ;;
+        2)
+            echo "Exiting the program."
+            exit 0
+            ;;
+        *)
+            echo "Invalid choice. Please enter a valid option."
+            read -p "Press Enter to continue..."
+            ;;
+    esac
+done
